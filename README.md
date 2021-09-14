@@ -1,2 +1,1 @@
-# ozkesali.github.io
-My Academic Webpage
+My personal academic website.
