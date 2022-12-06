@@ -1,3 +1,3 @@
 Personal academic website.
 
- Forked from https://github.com/alshedivat/al-folio
+ Based on https://github.com/alshedivat/al-folio
