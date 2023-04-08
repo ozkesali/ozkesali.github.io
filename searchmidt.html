@@ -1,8 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search</title>
+</head>
+<body>
+	<form>
+	    <label for="idnumber">Enter ID Number:</label>
+	    <input type="text" id="idnumber" name="idnumber">
+	    <button type="submit">Submit</button>
+	</form>
 
-<form>
-    <label for="idnumber">Enter ID Number:</label>
-    <input type="text" id="idnumber" name="idnumber">
-    <button type="submit">Submit</button>
-</form>
+	<p id="result"></p>
 
-<p id="result"></p>
+	<script>
+		const form = document.querySelector('form');
+		const result = document.querySelector('#result');
+
+		form.addEventListener('submit', (event) => {
+		    event.preventDefault();
+
+		    const idnumber = form.elements['idnumber'].value;
+		    const xhr = new XMLHttpRequest();
+
+		    xhr.onload = function() {
+		        if (xhr.status === 200) {
+		            if (xhr.responseText !== 'Error: ID number not found') {
+		                result.textContent = xhr.responseText;
+		            } else {
+		                result.textContent = xhr.responseText;
+		            }
+		        } else {
+		            result.textContent = 'Error: ' + xhr.status;
+		        }
+		    };
+
+		    xhr.open('GET', '/search.py?idnumber=' + encodeURIComponent(idnumber));
+		    xhr.send();
+		});
+	</script>
+</body>
+</html>
+
+
