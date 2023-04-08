@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_excel('MidtermScores.xlsx', index_col='Student_number')
+df = pd.read_excel('/assets/MidtermScores.xlsx', index_col='Student_number')
 
 def get_value(Student_number):
     try:
