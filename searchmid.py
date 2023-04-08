@@ -1,9 +1,9 @@
 import pandas as pd
 
-df = pd.read_excel('site.xlsx', index_col='idnumber')
+df = pd.read_excel('MidtermScores.xlsx', index_col='Student_number')
 
-def get_value(idnumber):
+def get_value(Student_number):
     try:
-        return df.loc[idnumber]['value']
+        return df.loc[Student_number]['Total']
     except KeyError:
         return None
