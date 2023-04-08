@@ -5,8 +5,8 @@
 </head>
 <body>
 	<form>
-	    <label for="idnumber">Enter ID Number:</label>
-	    <input type="text" id="idnumber" name="idnumber">
+	    <label for="Student_number">Enter ID Number:</label>
+	    <input type="text" id="Student_number" name="Student_number">
 	    <button type="submit">Submit</button>
 	</form>
 
@@ -19,7 +19,7 @@
 		form.addEventListener('submit', (event) => {
 		    event.preventDefault();
 
-		    const idnumber = form.elements['idnumber'].value;
+		    const Student_number = form.elements['Student_number'].value;
 		    const xhr = new XMLHttpRequest();
 
 		    xhr.onload = function() {
@@ -34,7 +34,7 @@
 		        }
 		    };
 
-		    xhr.open('GET', '/search.py?idnumber=' + encodeURIComponent(idnumber));
+		    xhr.open('GET', '/search.py?Student_number=' + encodeURIComponent(Student_number));
 		    xhr.send();
 		});
 	</script>
